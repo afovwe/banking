@@ -30,7 +30,7 @@ if (!user) {
           <HeaderBox 
             type="greeting" 
             title="Welcome"
-            user={user?.name || 'Guest'}
+            user={user?.firstName || 'Guest'}
             subtext="Access and manage your account and transactions efficiently"
           />
           <TotalBalanceBox

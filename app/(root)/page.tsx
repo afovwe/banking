@@ -12,7 +12,7 @@ const Dashboard = () => {
  useEffect(() => {
   const fetchUserData = async () => {
     const userData = await getLoggedInUser();
-    console.log("User data fetched in Dashboard:", userData); // Add this log to debug
+   
     setUser(userData); // Set the fetched user data to state
   };
 

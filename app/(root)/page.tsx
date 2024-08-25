@@ -36,13 +36,12 @@ const Dashboard = async ({ searchParams: { id, page } }: SearchParamProps) => {
             totalCurrentBalance={accounts?.totalCurrentBalance}
           />
         </header>
-
-        {<RecentTransactions 
+        <RecentTransactions 
           accounts={accountsData}
           transactions={account?.transactions}
           appwriteItemId={appwriteItemId}
           page={currentPage}
-        />}
+        />
       </div>
 
       <RightSidebar 

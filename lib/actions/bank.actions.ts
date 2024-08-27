@@ -74,7 +74,6 @@ export const getAccount = async ({ appwriteItemId }: getAccountProps) => {
       access_token: bank.accessToken,
     });
     const accountData = accountsResponse.data.accounts[0];
-
     // get transfer transactions from appwrite
     const transferTransactionsData = await getTransactionsByBankId({
       bankId: bank.$id,
@@ -87,7 +86,7 @@ export const getAccount = async ({ appwriteItemId }: getAccountProps) => {
         amount: transferData.amount!,
         date: transferData.$createdAt,
         paymentChannel: transferData.channel,
-        category: transferData.category,
+        category: transferData.category,        
         type: transferData.senderBankId === bank.$id ? "debit" : "credit",
       })
     );

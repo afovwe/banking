@@ -9,6 +9,22 @@ const {
   APPWRITE_TRANSACTION_COLLECTION_ID: TRANSACTION_COLLECTION_ID,
 } = process.env;
 
+// Function to log the schema of the TRANSACTION_COLLECTION_ID
+export const logTransactionCollectionSchema = async () => {
+  try {
+    const { database } = await createAdminClient();
+
+    const collection = await database.getCollection(
+      DATABASE_ID!,
+      TRANSACTION_COLLECTION_ID!
+    );
+
+    console.log(collection.attributes);
+  } catch (error) {
+    console.log('Error fetching collection schema:', error);
+  }
+};
+
 export const createTransaction = async (transaction: CreateTransactionProps) => {
   try {
     const { database } = await createAdminClient();
@@ -30,7 +46,7 @@ export const createTransaction = async (transaction: CreateTransactionProps) => 
   }
 }
 
-export const getTransactionsByBankId = async ({bankId}: getTransactionsByBankIdProps) => {
+export const getTransactionsByBankId = async ({ bankId }: getTransactionsByBankIdProps) => {
   try {
     const { database } = await createAdminClient();
 
@@ -49,7 +65,7 @@ export const getTransactionsByBankId = async ({bankId}: getTransactionsByBankIdP
     const transactions = {
       total: senderTransactions.total + receiverTransactions.total,
       documents: [
-        ...senderTransactions.documents, 
+        ...senderTransactions.documents,
         ...receiverTransactions.documents,
       ]
     }

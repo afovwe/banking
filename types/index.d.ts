@@ -82,6 +82,8 @@ declare type Transaction = {
   receiverBankId: string;
 };
 
+
+
 declare type Bank = {
   $id: string;
   accountId: string;
@@ -289,6 +291,8 @@ declare interface CreateTransactionProps {
   receiverBankId: string;
   email: string;
 }
+
+
 
 declare interface getTransactionsByBankIdProps {
   bankId: string;

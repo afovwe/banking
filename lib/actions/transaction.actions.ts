@@ -10,7 +10,7 @@ const {
 } = process.env;
 
 // Function to log the schema of the TRANSACTION_COLLECTION_ID
-export const logTransactionCollectionSchema = async () => {
+/* export const logTransactionCollectionSchema = async () => {
   try {
     const { database } = await createAdminClient();
 
@@ -23,7 +23,7 @@ export const logTransactionCollectionSchema = async () => {
   } catch (error) {
     console.log('Error fetching collection schema:', error);
   }
-};
+}; */
 
 export const createTransaction = async (transaction: CreateTransactionProps) => {
   try {

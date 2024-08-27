@@ -146,7 +146,7 @@
   }
 
   .recent-transactions-label {
-    @apply text-20 md:text-24 font-semibold text-gray-900;
+    @apply text-20 md:text-20 font-semibold text-gray-900;
   }
 
   .recent-transactions-tablist {

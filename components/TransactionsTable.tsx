@@ -1,7 +1,6 @@
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
@@ -81,7 +80,7 @@ const TransactionsTable = ({ transactions }: TransactionTableProps) => {
                 {formatDateTime(new Date(t.date)).dateTime}
               </TableCell>
 
-              <TableCell className="pl-1 pr-8 capitalize min-w-22">
+              <TableCell className="pl-1 pr-8 capitalize min-w-22 max-md:hidden">
                {t.paymentChannel}
               </TableCell>
 
